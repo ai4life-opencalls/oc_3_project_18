@@ -11,7 +11,7 @@ This repository contains code for the automatic detection of Nuclear Pore Comple
 All images used in this tutorial are licensed under **CC-BY**. If any of the instructions are not working, please [open an issue](https://github.com/ai4life-opencalls/oc_3_project_18/issues) or contact us at [ai4life@fht.org](ai4life@fht.org)!
 
 ## Introduction
-The project focuses on ...
+The project focuses on .....
 
 
 
