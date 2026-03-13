@@ -11,9 +11,9 @@ This repository contains code for the automatic detection of Nuclear Pore Comple
 All images used in this tutorial are licensed under **CC-BY**. If any of the instructions are not working, please [open an issue](https://github.com/ai4life-opencalls/oc_3_project_18/issues) or contact us at [ai4life@fht.org](ai4life@fht.org)!
 
 ## Introduction
-The project focuses on .....
+Nuclear pore complexes (NPCs) are large protein assemblies that regulate the exchange of macromolecules between the nucleus and cytoplasm. In healthy cells, NPCs exhibit a canonical circular or donut‑like architecture with well‑defined diameter, circularity, and stoichiometry. Deviations from this structure are thought to underlie defects in nucleo‑cytoplasmic transport, but they are difficult to quantify systematically at the single‑pore level. This project aims to provide a robust, open pipeline for detecting individual NPCs in DNA‑PAINT data, extracting quantitative shape descriptors, and classifying pores according to their structural deviations.
 
-
+The data consist of DNA‑PAINT super‑resolution images of Nup107‑labelled NPCs, acquired as localization microscopy movies. The pipeline starts from raw or pre‑localized data (Picasso Localize), performs drift correction and image rendering, and then detects nucleus and segments individual pores within the nucleus. NPC candidates are separated from free proteins, noise, and other structures using a combination of localization‑space clustering, intensity‑based filters, and position constraints relative to the nuclear mask. For each detected NPC, the workflow computes features such as centroid, diameter, circularity, ellipticity (via ellipse fitting), and proxies for stoichiometry based on the number and density of localizations.
 
 ## Installation
 
