@@ -17,8 +17,11 @@ The data consist of DNA‑PAINT super‑resolution images of Nup107‑labelled N
 
 <img width="4526" height="1498" alt="image1" src="https://github.com/user-attachments/assets/28d5cdbd-77a1-40af-9775-e4a14582e50c" />
 
-
 _Figure 1: (left) rendered localisations, (middle) segmented nucleus, (right) nucleus edge in red is overlaid on the localisations._
+
+<img width="3880" height="3540" alt="nucleus_render_rgb_f" src="https://github.com/user-attachments/assets/f9577e49-da62-4160-b372-ef624c554214" />
+
+_Figure 2: Localisations spatially filtered to position within nucleus, zoomed and rendered at higher resolution._
 
 ## Installation
 
