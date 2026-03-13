@@ -16,7 +16,7 @@ Nuclear pore complexes (NPCs) are large protein assemblies that regulate the exc
 The data consist of DNA‑PAINT super‑resolution images of Nup107‑labelled NPCs, acquired as localization microscopy movies. The pipeline starts from raw or pre‑localized data (Picasso Localize), performs drift correction and image rendering, and then detects nucleus and segments individual pores within the nucleus. NPC candidates are separated from free proteins, noise, and other structures using a combination of localization‑space clustering, intensity‑based filters, and position constraints relative to the nuclear mask. For each detected NPC, the workflow computes features such as centroid, diameter, circularity, ellipticity (via ellipse fitting), and proxies for stoichiometry based on the number and density of localizations.
 
 <img width="4504" height="1498" alt="image1" src="https://github.com/user-attachments/assets/257f06f2-2156-4126-a94a-01c25b6c5971" />
-Figure 1: (left) rendered localisations, (middle) segmented nucleus, (right) nucleus edge in red is overlaid on the localisations.
+*Figure 1: (left) rendered localisations, (middle) segmented nucleus, (right) nucleus edge in red is overlaid on the localisations.*
 
 ## Installation
 
