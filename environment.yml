@@ -1,10 +1,29 @@
-name: AI4Life_OC3_18
+name: oc_3_project_18
 channels:
   - conda-forge
   - defaults
 dependencies:
+   numpy
+  - pandas
+  - pytables
+  - python=3.7
+  - scikit-learn
+  - fastparquet
+  - trackpy
+  - h5py
+  - pyyaml
   - pip
-  - python
+  - matplotlib
+  - scipy
+  - dask
+  - hdbscan
+  - tqdm
+  - pyqt
+  - numba
+  - spyder
+  - colorama
   - jupyterlab
+  - snappy
   - pip:
-    - -r requirements.txt
+    - lmfit
+    - sphinx-rtd-theme
