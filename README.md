@@ -43,16 +43,15 @@ Then run [Jupyter Lab](https://jupyter.org) from within the `oc_3_project_18` co
 
 Inside the `notebooks` folder you will find Jupyter notebooks for:
 
-### Step 1 : Preprocessing the localizations
+### Step 1 : [Preprocessing the localizations](notebooks/1-Preprocess_localizations.ipynb)
 
-This notebook preprocesses single-molecule localization data to make it cleaner and more reliable for downstream analysis. It filters low-quality localizations, corrects sample drift, and then segments the nucleus so that only localizations inside the relevant biological region are kept. This reduces false localizations from background and out-of-focus signals, improving the accuracy of later measurements.
+This notebook preprocesses single-molecule localization data to make it cleaner and more reliable for downstream analysis. It filters low-quality localizations, corrects sample drift, and then segments the nucleus so that only localizations inside the relevant biological region are kept. This reduces false localizations from background and out-of-focus signals, improving the accuracy of later measurements. The pipeline consists of:
 
-It performs the following steps: 
 1. Data loading - loads the .hdf5 file together with metadata containing localizations
 2. Quality filter - filters the localizations based on reasonable precision and brightness
 3. Simple localisation diagnostics - checks temporal stability and spatial uniformity
 4. Undrift the localizations -  corrects the localizations for the drift using AIM method
-5. Render the localizations using Picasso Render and save them as a png image
+5. Rendering - renders the localizations using Picasso Render and save them as a png image
 6. Segment nucleus using morphological operations
 7. Spatial filtering - filter the localizations based on their spatial location within nucleus 
 8. Saving the processed localizations into .hdf5 and .yaml files, and rendered image into .png file.
@@ -65,7 +64,25 @@ _Figure 1: (left) rendered localisations, (middle) segmented nucleus, (right) nu
 
 _Figure 2: Localisations spatially filtered to position within nucleus, zoomed and rendered at higher resolution._
 
+### Step 2 : Detecting Nuclear Pore Complexes (NPC) using Picasso software
 
+<img width="1951" height="1279" alt="Screenshot (183)" src="https://github.com/user-attachments/assets/d8edb0c2-b8de-403b-b7de-4e96d4e062a9" />
+_Figure 3: NPCs detected using "Pick similar" function in Picasso software after manual selection of few NPCs._
+
+### Step 3 : [Analazing the detected Nuclear Pore Complexes](notebooks/2-Analyze_NPCs.ipynb)
+
+This notebook focuses on extracting and quantifying nuclear pore complex (NPC) geometry from localization data. It renders the localizations for visual inspection, fits ellipses to each NPC, and calculates feature values so the structure of individual pores and the overall population can be evaluated consistently.
+The pipeline consists of:
+
+1. Data loading - loads the .hdf5 file together with metadata containing localizations
+2. Render the localizations using Picasso Render, crop the central part and save as a png:
+3. Calculate and visualise NPC features and fit ellipse to NPC localisations
+4. Visualize fitted on the rendering of NPC localizations
+5. Examine features of specific NPC by setting the group_ID variable
+6. Statistical summary of distribution of feature values over all the NPC's
+
+<img width="2070" height="1900" alt="npc_ellipses" src="https://github.com/user-attachments/assets/d4614575-99dd-43f3-ba64-b2f9b7316cba" />
+_Figure 4: Ellipses fitted to NPCs plotting on top of the localizations rendering._
 
 ## Acknowledgements
 AI4Life has received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.
