@@ -73,7 +73,7 @@ _Figure 3: NPCs detected using "Pick similar" function in Picasso software after
 
 ### Step 3 : [Analazing the detected Nuclear Pore Complexes](notebooks/2-Analyze_NPCs.ipynb)
 
-This notebook focuses on extracting and quantifying nuclear pore complex (NPC) geometry from localization data. It renders the localizations for visual inspection, fits ellipses to each NPC, and calculates feature values so the structure of individual pores and the overall population can be evaluated consistently.
+The second notebook focuses on extracting and quantifying nuclear pore complex (NPC) geometry from localization data acquired in the orevious step. It renders the localizations for visual inspection, fits ellipses to each NPC, and calculates feature values so the structure of individual pores and the overall population can be evaluated consistently.
 The pipeline consists of:
 
 1. Data loading - loads the .hdf5 file together with metadata containing localizations
