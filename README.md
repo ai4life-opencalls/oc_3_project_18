@@ -15,14 +15,6 @@ Nuclear pore complexes (NPCs) are large protein assemblies that regulate the exc
 
 The data consist of DNA‑PAINT super‑resolution images of Nup107‑labelled NPCs, acquired as localization microscopy movies. The pipeline starts from raw or pre‑localized data (Picasso Localize), performs drift correction and image rendering, and then detects nucleus and segments individual pores within the nucleus. NPC candidates are separated from free proteins, noise, and other structures using a combination of localization‑space clustering, intensity‑based filters, and position constraints relative to the nuclear mask. For each detected NPC, the workflow computes features such as centroid, diameter, circularity, ellipticity (via ellipse fitting), and proxies for stoichiometry based on the number and density of localizations.
 
-<img width="4526" height="1498" alt="image1" src="https://github.com/user-attachments/assets/28d5cdbd-77a1-40af-9775-e4a14582e50c" />
-
-_Figure 1: (left) rendered localisations, (middle) segmented nucleus, (right) nucleus edge in red is overlaid on the localisations._
-
-<img width="3880" height="3540" alt="nucleus_render_rgb_f" src="https://github.com/user-attachments/assets/f9577e49-da62-4160-b372-ef624c554214" />
-
-_Figure 2: Localisations spatially filtered to position within nucleus, zoomed and rendered at higher resolution._
-
 ## Installation
 
 Install the [conda](https://conda.io) package, dependency and environment manager.
@@ -50,6 +42,30 @@ Then run [Jupyter Lab](https://jupyter.org) from within the `oc_3_project_18` co
     jupyter-lab
 
 Inside the `notebooks` folder you will find Jupyter notebooks for:
+
+### Step 1 : Preprocessing the localizations
+
+This notebook preprocesses single-molecule localization data to make it cleaner and more reliable for downstream analysis. It filters low-quality localizations, corrects sample drift, and then segments the nucleus so that only localizations inside the relevant biological region are kept. This reduces false localizations from background and out-of-focus signals, improving the accuracy of later measurements.
+
+It performs the following steps: 
+1. Data loading - loads the .hdf5 file together with metadata containing localizations
+2. Quality filter - filters the localizations based on reasonable precision and brightness
+3. Simple localisation diagnostics - checks temporal stability and spatial uniformity
+4. Undrift the localizations -  corrects the localizations for the drift using AIM method
+5. Render the localizations using Picasso Render and save them as a png image
+6. Segment nucleus using morphological operations
+7. Spatial filtering - filter the localizations based on their spatial location within nucleus 
+8. Saving the processed localizations into .hdf5 and .yaml files, and rendered image into .png file.
+
+<img width="4526" height="1498" alt="image1" src="https://github.com/user-attachments/assets/28d5cdbd-77a1-40af-9775-e4a14582e50c" />
+
+_Figure 1: (left) rendered localisations, (middle) segmented nucleus, (right) nucleus edge in red is overlaid on the localisations._
+
+<img width="1570" height="1453" alt="nucleus_NPC" src="https://github.com/user-attachments/assets/632cd470-13f0-47e6-9edb-dc4161222cbf" />
+
+_Figure 2: Localisations spatially filtered to position within nucleus, zoomed and rendered at higher resolution._
+
+
 
 ## Acknowledgements
 AI4Life has received funding from the European Union’s Horizon Europe research and innovation programme under grant agreement number 101057970. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Council Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.
