@@ -64,7 +64,9 @@ _Figure 1: (left) rendered localisations, (middle) segmented nucleus, (right) nu
 
 _Figure 2: Localisations spatially filtered to position within nucleus, zoomed and rendered at higher resolution._
 
-### Step 2 : Detecting Nuclear Pore Complexes (NPC) using Picasso software
+### Step 2 : Detecting Nuclear Pore Complexes (NPC) using Picasso "Pick Similar"
+
+This step loads the nucleus-filtered localizations from Notebook 1 into Picasso software and uses the Pick Similar tool to detect NPCs. You manually pick 5–10 example NPCs using a 2.3-camera-pixel circle (adjustable with Ctrl+T), set std=2, then apply Pick Similar to automatically find matching dense clusters across the field of view based on localization count. Right-click unwanted detections to remove them, then save the final group_id-labeled localizations for Notebook 2.
 
 <img width="1951" height="1279" alt="Screenshot (183)" src="https://github.com/user-attachments/assets/d8edb0c2-b8de-403b-b7de-4e96d4e062a9" />
 _Figure 3: NPCs detected using "Pick similar" function in Picasso software after manual selection of few NPCs._
