@@ -5,7 +5,7 @@
 
 
 
-# Project #18: Detection of Nuclear Pore Complexes by DNA PAINT
+# Project #18: Detection and analysis of Nuclear Pore Complexes by DNA PAINT
 
 This repository contains code for the automatic detection of Nuclear Pore Complexes (NPC) in localization microscopy. Developed as part of the [AI4Life project](https://ai4life.eurobioimaging.eu), it uses data provided by Emilie Costes from the CBS, Montpellier, FR.
 All images used in this tutorial are licensed under **CC-BY**. If any of the instructions are not working, please [open an issue](https://github.com/ai4life-opencalls/oc_3_project_18/issues) or contact us at [ai4life@fht.org](ai4life@fht.org)!
@@ -73,13 +73,13 @@ _Figure 3: NPCs detected using "Pick similar" function in Picasso software after
 
 ### Step 3 : [Analazing the detected Nuclear Pore Complexes](notebooks/2-Analyze_NPCs.ipynb)
 
-The second notebook focuses on extracting and quantifying nuclear pore complex (NPC) geometry from localization data acquired in the orevious step. It renders the localizations for visual inspection, fits ellipses to each NPC, and calculates feature values so the structure of individual pores and the overall population can be evaluated consistently.
+The second notebook focuses on extracting and quantifying nuclear pore complex (NPC) geometry from localization data acquired in the previous step. It renders the localizations for visual inspection, fits ellipses to each NPC, and calculates feature values so the structure of individual pores and the overall population can be evaluated consistently.
 The pipeline consists of:
 
 1. Data loading - loads the .hdf5 file together with metadata containing localizations
 2. Render the localizations using Picasso Render, crop the central part and save as a png:
 3. Calculate and visualise NPC features and fit ellipse to NPC localisations
-4. Visualize fitted on the rendering of NPC localizations
+4. Visualize fitted ellipse on the rendering of NPC localizations
 5. Examine features of specific NPC by setting the group_ID variable
 6. Statistical summary of distribution of feature values over all the NPC's
 
